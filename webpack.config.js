@@ -21,9 +21,17 @@ module.exports = {
           loader: "babel-loader"
         }
       },
-
-
-
+//everything below this is a change
+{
+        test: /\.(png|jpg|gif)$/i,
+        use: {
+              loader: 'url-loader',
+              options: {
+              limit: 8192
+                }
+              }
+            },
+//everything above was changed
       {
         test: /\.s[c|a]ss$/,
         use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
@@ -40,12 +48,17 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'style.[contenthash].css',
     }),
+    //changed inject to true
     new HtmlWebpackPlugin({
       inject: false,
       hash: true,
       template: './src/index.html',
       filename: 'index.html'
     }),
+    new HtmlWebpackPlugin({
+   template: './src/contact.html',
+   filename: 'contact.html'
+ }),
     new WebpackMd5Hash()
   ]
 };

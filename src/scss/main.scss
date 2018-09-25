@@ -1,6 +1,6 @@
 body {
   background-color: pink;
-      background-image: src="assets/images/room1-500.png";
+  background-image: url(../assets/images/room5.png);
 }
 
 #container {
@@ -13,5 +13,31 @@ body {
     &:hover {
       color: blue;
     }
+  }
+}
+
+
+/* MOBILE RULES */
+@media screen and (max-width: 550px) {
+  .header {
+    height: 75px;
+  }
+
+  .header h1 {
+    margin: 10px auto;
+    font-size: calc(2.7rem);
+  }
+
+  .image-container {
+    height: 400px;
+    justify-content: center;
+  }
+
+  .image-container img {
+    width: 100%;
+  }
+
+  .content-small {
+    background-color: mistyRose;
   }
 }
