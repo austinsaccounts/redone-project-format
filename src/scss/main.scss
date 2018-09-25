@@ -1,0 +1,17 @@
+body {
+  background-color: pink;
+      background-image: src="assets/images/room1-500.png";
+}
+
+#container {
+  display: flex;
+  justify-content: space-around;
+
+  #scss {
+    color: green;
+
+    &:hover {
+      color: blue;
+    }
+  }
+}
